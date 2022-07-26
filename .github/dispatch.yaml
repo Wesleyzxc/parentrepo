@@ -1,0 +1,8 @@
+name: Repo dispatch receiver
+on: repository_dispatch
+jobs:
+  echo_something:
+    steps:
+      - env:
+          MESSAGE: ${{ github.event.hash}}
+        run: echo "Hash received is $MESSAGE"
