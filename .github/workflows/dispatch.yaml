@@ -5,4 +5,4 @@ jobs:
     steps:
       - env:
           MESSAGE: ${{ github.event.hash}}
-        run: echo "Hash received is $MESSAGE"
+      - run: echo "Hash received is $MESSAGE"
