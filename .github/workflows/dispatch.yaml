@@ -6,5 +6,6 @@ jobs:
     steps:
       - name: Echo received data
         env:
-          MESSAGE: ${{ github.event.hash}}
-        run: echo "Hash received is ${MESSAGE}"
+          MESSAGE: ${{ github.event.client_payload.hash }}
+        run: |
+          echo "Hash received is ${MESSAGE}"
