@@ -2,7 +2,9 @@ name: Repo dispatch receiver
 on: repository_dispatch
 jobs:
   echo_something:
+    runs-on: ubuntu-latest
     steps:
-      - env:
+      - name: Echo received data
+        env:
           MESSAGE: ${{ github.event.hash}}
-      - run: echo "Hash received is $MESSAGE"
+        run: echo "Hash received is $MESSAGE"
